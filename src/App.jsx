@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
-import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Outlet, Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
+import MenuMorphButton from './components/MenuMorphButton';
 import MobileMenu from './components/MobileMenu';
 import SiteHeader from './components/SiteHeader';
 import AboutPage from './pages/AboutPage';
@@ -13,17 +14,18 @@ function AppShell() {
 
   return (
     <>
+      <MenuMorphButton
+        ref={menuButtonRef}
+        menuOpen={menuOpen}
+        onToggle={() => setMenuOpen((open) => !open)}
+      />
       <MobileMenu
         open={menuOpen}
         onClose={() => setMenuOpen(false)}
         returnFocusRef={menuButtonRef}
       />
       <div className="mx-auto max-w-[1400px]">
-        <SiteHeader
-          ref={menuButtonRef}
-          menuOpen={menuOpen}
-          onMenuToggle={() => setMenuOpen((open) => !open)}
-        />
+        {useLocation().pathname !== '/about' && <SiteHeader />}
         <Outlet />
       </div>
     </>

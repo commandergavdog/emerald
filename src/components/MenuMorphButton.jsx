@@ -9,25 +9,27 @@ const MenuMorphButton = forwardRef(function MenuMorphButton({ menuOpen, onToggle
       ref={ref}
       type="button"
       onClick={onToggle}
-      className={`flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-md p-1 ${
-        menuOpen
-          ? 'fixed right-4 top-8 z-[101] md:top-16 md:right-[max(1rem,calc((100vw-1400px)/2+min(7.5vw,118px)))]'
-          : 'relative z-10'
-      }`}
+      className="absolute right-4 top-8 z-[101] flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-md p-1 md:top-16 md:right-[max(1rem,calc((100vw-1400px)/2+min(7.5vw,118px)))]"
       aria-label={menuOpen ? 'Close menu' : 'Open menu'}
       aria-expanded={menuOpen}
       aria-controls="mobile-navigation-dialog"
       aria-haspopup="dialog"
     >
-      <span className="flex h-[22px] w-11 flex-col justify-between" aria-hidden="true">
+      <span className="relative h-[22px] w-11" aria-hidden="true">
+        {/* Top line — fades out when open */}
         <span
-          className={`${BAR} ${menuOpen ? 'translate-y-[10px] rotate-45' : 'translate-y-0 rotate-0'}`}
+          className={`${BAR} absolute top-0 ${menuOpen ? 'opacity-0' : 'opacity-100'}`}
+        />
+        {/* Middle — two stacked lines that rotate to form X */}
+        <span
+          className={`${BAR} absolute top-1/2 -translate-y-1/2 ${menuOpen ? 'rotate-45' : 'rotate-0'}`}
         />
         <span
-          className={`${BAR} ${menuOpen ? 'scale-x-0 opacity-0' : 'scale-x-100 opacity-100'}`}
+          className={`${BAR} absolute top-1/2 -translate-y-1/2 ${menuOpen ? '-rotate-45' : 'rotate-0'}`}
         />
+        {/* Bottom line — fades out when open */}
         <span
-          className={`${BAR} ${menuOpen ? '-translate-y-[10px] -rotate-45' : 'translate-y-0 rotate-0'}`}
+          className={`${BAR} absolute bottom-0 ${menuOpen ? 'opacity-0' : 'opacity-100'}`}
         />
       </span>
     </button>

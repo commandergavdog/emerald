@@ -83,3 +83,12 @@ export const PROJECTS = [
 export function getProjectBySlug(slug) {
   return PROJECTS.find((p) => p.slug === slug) ?? null;
 }
+
+export function getProjectSiblings(slug) {
+  const idx = PROJECTS.findIndex((p) => p.slug === slug);
+  if (idx === -1) return { prev: null, next: null };
+  return {
+    prev: idx > 0 ? PROJECTS[idx - 1] : null,
+    next: idx < PROJECTS.length - 1 ? PROJECTS[idx + 1] : null,
+  };
+}

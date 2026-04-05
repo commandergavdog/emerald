@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import FluidButton from './FluidButton';
 
 const springHover = { type: 'spring', duration: 0.4, bounce: 0.2 };
@@ -34,8 +35,8 @@ export default function MobileMenu({ open, onClose, returnFocusRef }) {
     <div
       id="mobile-navigation-dialog"
       inert={!open ? true : undefined}
-      className={`fixed inset-0 z-[100] flex flex-col bg-gradient-to-b from-[#f0f2f5] to-white transition-transform duration-300 ease-out motion-reduce:transition-none ${
-        open ? 'translate-x-0' : 'pointer-events-none -translate-x-full'
+      className={`fixed inset-0 z-[100] flex flex-col bg-gradient-to-b from-[#f0f2f5] to-white transition-all duration-300 ease-out motion-reduce:transition-none ${
+        open ? 'translate-x-0 opacity-100' : 'pointer-events-none -translate-x-full opacity-0'
       }`}
       role="dialog"
       aria-modal="true"
@@ -44,19 +45,21 @@ export default function MobileMenu({ open, onClose, returnFocusRef }) {
     >
       <div className="mx-auto flex w-full max-w-[1400px] flex-1 flex-col">
         <div className="flex items-start justify-between px-4 pr-16 pt-8 md:px-[min(7.5vw,118px)] md:pr-[calc(min(7.5vw,118px)+2.75rem)] md:pt-16">
-          <p
+          <Link
+            to="/"
             id="mobile-menu-title"
-            className="min-w-0 font-['ITC_Garamond_Std',Georgia,serif] text-5xl font-light leading-none text-black md:text-[64px]"
+            onClick={handleNavClick}
+            className="min-w-0 font-['ITC_Garamond_Std',Georgia,serif] text-5xl font-light leading-none text-black no-underline md:text-[64px]"
           >
             Frank Dominguez
-          </p>
+          </Link>
         </div>
 
         <nav
-          className="flex flex-1 flex-col items-center justify-start pt-24 gap-16 px-4"
+          className="flex flex-1 flex-col items-center justify-start pt-12 gap-8 px-4"
           aria-label="Primary"
         >
-          <FluidButton to="/#works" onClick={handleNavClick}>
+          <FluidButton to="/" onClick={handleNavClick}>
             Work
           </FluidButton>
           <FluidButton to="/about" onClick={handleNavClick}>
