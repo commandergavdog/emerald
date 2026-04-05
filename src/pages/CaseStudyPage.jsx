@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { Link, Navigate, useLocation, useNavigate, useParams } from 'react-router-dom';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
+import Seo from '../components/Seo';
 import SiteFooter from '../components/SiteFooter';
 import { getProjectBySlug, getProjectSiblings } from '../data/projects';
 
@@ -148,6 +149,7 @@ export default function CaseStudyPage() {
     year,
     description,
     imageSrc,
+    imageAlt,
     imageClassName,
     technologies,
     externalUrl,
@@ -155,6 +157,11 @@ export default function CaseStudyPage() {
 
   return (
     <>
+      <Seo
+        title={`${caseTitle} | Frank Dominguez`}
+        description={description}
+        path={`/work/${slug}`}
+      />
       <section className="px-4 pb-2 pt-6 text-center md:pb-4 md:pt-8">
         <h1 className="font-['ITC_Garamond_Std',Georgia,serif] text-5xl font-light leading-none text-black md:text-[64px]">
           <Link to="/" className="">
@@ -280,7 +287,7 @@ export default function CaseStudyPage() {
                 >
                   {imageSrc ? (
                     <img
-                      alt=""
+                      alt={imageAlt}
                       src={imageSrc}
                       className={`pointer-events-none max-w-none ${imageClassName}`}
                     />

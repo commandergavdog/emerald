@@ -1,4 +1,5 @@
 import { useMemo, useSyncExternalStore } from 'react';
+import Seo from '../components/Seo';
 import SiteFooter from '../components/SiteFooter';
 import { ABOUT_GALLERY } from '../data/aboutGallery';
 
@@ -33,7 +34,7 @@ function GalleryTile({ item, height }) {
         className="relative w-full overflow-hidden rounded-lg bg-neutral-300"
         style={{ height }}
       >
-        <img src={item.src} alt="" className={item.imgClass} />
+        <img src={item.src} alt={item.alt} className={item.imgClass} />
       </div>
     </figure>
   );
@@ -75,20 +76,25 @@ function MasonryGallery() {
 export default function AboutPage() {
   return (
     <>
+      <Seo
+        title="About Frank Dominguez | Web Developer & Designer"
+        description="Learn more about Frank Dominguez, a Kansas City-based web developer and designer focused on thoughtful, accessible digital experiences."
+        path="/about"
+      />
       <main id="about" className="pb-10 lg:pb-16">
         <div className="px-4 pt-4 md:px-[min(7.5vw,118px)] lg:pt-6">
           <div className="flex flex-col lg:items-center">
             <div className="relative mx-auto lg:mx-0">
               <img
                 src="/images/about/avatar-mobile.webp"
-                alt=""
+                alt="Portrait of Frank Dominguez."
                 className="size-[122px] rounded-full object-cover lg:hidden"
                 width={122}
                 height={122}
               />
               <img
                 src="/images/about/avatar-desktop.webp"
-                alt=""
+                alt="Portrait of Frank Dominguez."
                 className="hidden size-[200px] rounded-full object-cover lg:block"
                 width={200}
                 height={200}

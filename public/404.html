@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <script>
+      // GitHub Pages serves this file for unknown routes. Redirect them back through
+      // the SPA entry point so BrowserRouter can restore the intended path.
+      (function redirectToSpa() {
+        var location = window.location;
+        var redirectUrl =
+          location.protocol +
+          '//' +
+          location.hostname +
+          (location.port ? ':' + location.port : '') +
+          '/?/' +
+          location.pathname.slice(1).replace(/&/g, '~and~') +
+          (location.search ? '&' + location.search.slice(1).replace(/&/g, '~and~') : '') +
+          location.hash;
+
+        location.replace(redirectUrl);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

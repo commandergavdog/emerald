@@ -1,0 +1,19 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F3F4F6"/>
+  <rect x="72" y="72" width="1056" height="486" rx="36" fill="white"/>
+  <g transform="translate(105 196) scale(3.2)">
+    <path
+      d="M30.5391 37.2208V40.2527L2.53564 27.3535V24.3767L30.5391 11.4775V14.5093L5.95339 25.8651L30.5391 37.2208ZM31.1241 47.9702H30.2971C30.0766 47.9702 29.8561 47.9702 29.8561 47.7497C29.8561 47.4741 30.1869 46.8126 30.4074 46.2613L47.9923 1.49982C48.2128 0.89345 48.3782 0.783203 48.709 0.783203H49.7563C49.9768 0.783203 50.1973 0.783203 50.1973 1.0037C50.1973 1.27932 49.8666 1.99595 49.6461 2.49207L32.0612 47.2536C31.8407 47.86 31.6753 47.9702 31.1241 47.9702ZM50.9314 37.2208L75.5172 25.8651L50.9314 14.5093V11.4775L78.9349 24.3767V27.3535L50.9314 40.2527V37.2208Z"
+      fill="#9D9D9D"
+    />
+  </g>
+  <text x="105" y="290" fill="#111111" font-family="Georgia, serif" font-size="72" font-weight="400">
+    Frank Dominguez
+  </text>
+  <text x="105" y="360" fill="#4B5563" font-family="Nunito, Arial, sans-serif" font-size="30" font-weight="600">
+    Web Developer and Designer
+  </text>
+  <text x="105" y="412" fill="#6B7280" font-family="Nunito, Arial, sans-serif" font-size="24" font-weight="400">
+    Thoughtful websites, case studies, and creative digital work.
+  </text>
+</svg>

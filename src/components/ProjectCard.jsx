@@ -35,6 +35,7 @@ export default function ProjectCard({
   year,
   description,
   imageSrc,
+  imageAlt,
   imageClassName = 'size-full object-cover',
 }) {
   const shouldReduceMotion = useReducedMotion();
@@ -45,10 +46,10 @@ export default function ProjectCard({
       className="flex h-full min-h-0 flex-col gap-2.5 rounded-2xl bg-white px-4 pb-6 pt-4"
       variants={cardVariants}
     >
-      <div className="relative h-[280px] w-full shrink-0 overflow-hidden rounded-lg bg-[#858585]">
+      <div className="relative h-[240px] w-full shrink-0 overflow-hidden rounded-lg bg-[#858585]">
         {imageSrc ? (
           <img
-            alt=""
+            alt={imageAlt}
             src={imageSrc}
             className={`pointer-events-none max-w-none ${imageClassName}`}
           />

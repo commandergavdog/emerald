@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import Hero from '../components/Hero';
 import ProjectCard from '../components/ProjectCard';
+import Seo from '../components/Seo';
 import SiteFooter from '../components/SiteFooter';
 import { PROJECTS } from '../data/projects';
 
@@ -31,6 +32,11 @@ export default function HomePage() {
 
   return (
     <>
+      <Seo
+        title="Frank Dominguez | Web Developer & Designer"
+        description="Portfolio of Frank Dominguez, a web developer and designer creating thoughtful, accessible, and visually refined digital experiences."
+        path="/"
+      />
       <Hero />
       <section
         id="works"
@@ -52,6 +58,7 @@ export default function HomePage() {
               year={project.year}
               description={project.summary}
               imageSrc={project.imageSrc}
+              imageAlt={project.imageAlt}
               imageClassName={project.imageClassName}
             />
           ))}

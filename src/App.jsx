@@ -7,6 +7,7 @@ import SiteHeader from './components/SiteHeader';
 import AboutPage from './pages/AboutPage';
 import CaseStudyPage from './pages/CaseStudyPage';
 import HomePage from './pages/HomePage';
+import NotFoundPage from './pages/NotFoundPage';
 
 function AppShell() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -41,6 +42,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/work/:slug" element={<CaseStudyPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
       </div>

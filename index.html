@@ -2,16 +2,49 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="canonical" href="https://frankweb.dev/" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Frank Dominguez is a web developer and designer building thoughtful, accessible, and visually refined digital experiences." />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:site_name" content="Frank Dominguez" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://frankweb.dev/" />
+    <meta property="og:title" content="Frank Dominguez | Web Developer & Designer" />
+    <meta property="og:description" content="Thoughtful websites, case studies, and creative digital work by Frank Dominguez." />
+    <meta property="og:image" content="https://frankweb.dev/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Frank Dominguez | Web Developer & Designer" />
+    <meta name="twitter:description" content="Thoughtful websites, case studies, and creative digital work by Frank Dominguez." />
+    <meta name="twitter:image" content="https://frankweb.dev/og-image.svg" />
     <title>Frank Dominguez | Web Developer & Designer</title>
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // Restore routes redirected by public/404.html so BrowserRouter receives the
+      // original path instead of the temporary GitHub Pages fallback query string.
+      (function restoreGitHubPagesRoute(location) {
+        if (!location.search || location.search[1] !== '/') {
+          return;
+        }
+
+        var decodedPath = location.search
+          .slice(1)
+          .split('&')
+          .map(function (segment) {
+            return segment.replace(/~and~/g, '&');
+          })
+          .join('?');
+
+        window.history.replaceState(null, '', decodedPath + location.hash);
+      })(window.location);
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
