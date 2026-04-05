@@ -38,4 +38,22 @@
         filter: none;
     }
 }
+
+@keyframes fluid-btn-pulse {
+    from { transform: scale(1); }
+    65% { transform: scale(1.1); }
+    to { transform: scale(1); }
+}
+
+.fluid-btn:hover {
+    animation: fluid-btn-pulse 0.5s cubic-bezier(0.4, 0, 0, 1);
+}
+
+.fluid-btn-slide {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1);
+}
+
+.fluid-btn:hover .fluid-btn-slide {
+    transform: translateY(-50%);
+}
   

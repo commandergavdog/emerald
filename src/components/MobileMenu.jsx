@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import FluidButton from './FluidButton';
 
 const springHover = { type: 'spring', duration: 0.4, bounce: 0.2 };
 
@@ -56,24 +56,12 @@ export default function MobileMenu({ open, onClose, returnFocusRef }) {
           className="flex flex-1 flex-col items-center justify-start pt-24 gap-16 px-4"
           aria-label="Primary"
         >
-          <Link
-            to="/#works"
-            onClick={handleNavClick}
-            className="inline-flex rounded-full bg-white px-6 py-1.5 shadow-[0_4px_4px_rgba(0,0,0,0.05)]"
-          >
-            <span className="purple-background-gradient font-[Nunito,sans-serif] text-[22px] font-semibold">
-              Work
-            </span>
-          </Link>
-          <Link
-            to="/about"
-            onClick={handleNavClick}
-            className="inline-flex rounded-full bg-white px-6 py-1.5 shadow-[0_4px_4px_rgba(0,0,0,0.05)]"
-          >
-            <span className="purple-background-gradient font-[Nunito,sans-serif] text-[22px] font-semibold">
-              About Me
-            </span>
-          </Link>
+          <FluidButton to="/#works" onClick={handleNavClick}>
+            Work
+          </FluidButton>
+          <FluidButton to="/about" onClick={handleNavClick}>
+            About Me
+          </FluidButton>
         </nav>
 
         <footer className="relative px-4 pb-16 pt-8 text-center">

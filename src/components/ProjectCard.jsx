@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import FluidButton from './FluidButton';
 
 export default function ProjectCard({
   slug,
@@ -34,14 +34,9 @@ export default function ProjectCard({
           </p>
         </div>
         <div className="px-2">
-          <Link
-            to={`/work/${slug}`}
-            className="inline-flex rounded-full bg-white px-6 py-1.5 shadow-[0_4px_4px_rgba(0,0,0,0.1)]"
-          >
-            <span className="purple-background-gradient font-[Nunito,sans-serif] text-sm font-semibold">
-              Learn More
-            </span>
-          </Link>
+          <FluidButton to={`/work/${slug}`}>
+            Learn More
+          </FluidButton>
         </div>
       </div>
     </article>
