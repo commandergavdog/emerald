@@ -1,12 +1,12 @@
-// tailwind.config.js
-module.exports = {
-    theme: {
-      extend: {
-        fontFamily: {
-          'garamond': ['ITC Garamond Std', 'serif'], // Define your custom font here
-        },
+const config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        garamond: ['ITC Garamond Std', 'serif'],
       },
     },
-    plugins: [],
-  };
-  
+  },
+  plugins: [],
+};
+
+export default config;

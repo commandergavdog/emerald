@@ -1,4 +1,33 @@
+import { motion, useReducedMotion } from 'framer-motion';
 import FluidButton from './FluidButton';
+
+const MotionArticle = motion.article;
+
+function getCardVariants(shouldReduceMotion) {
+  if (shouldReduceMotion) {
+    return {
+      hidden: { opacity: 1, y: 0, scale: 1 },
+      visible: { opacity: 1, y: 0, scale: 1 },
+    };
+  }
+
+  return {
+    hidden: {
+      opacity: 0,
+      y: 14,
+      scale: 0.992,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 1,
+        ease: [0.23, 1, 0.32, 1],
+      },
+    },
+  };
+}
 
 export default function ProjectCard({
   slug,
@@ -8,8 +37,14 @@ export default function ProjectCard({
   imageSrc,
   imageClassName = 'size-full object-cover',
 }) {
+  const shouldReduceMotion = useReducedMotion();
+  const cardVariants = getCardVariants(shouldReduceMotion);
+
   return (
-    <article className="flex h-full min-h-0 flex-col gap-2.5 rounded-2xl bg-white px-4 pb-6 pt-4">
+    <MotionArticle
+      className="flex h-full min-h-0 flex-col gap-2.5 rounded-2xl bg-white px-4 pb-6 pt-4"
+      variants={cardVariants}
+    >
       <div className="relative h-[280px] w-full shrink-0 overflow-hidden rounded-lg bg-[#858585]">
         {imageSrc ? (
           <img
@@ -33,12 +68,12 @@ export default function ProjectCard({
             {description}
           </p>
         </div>
-        <div className="px-2">
+        <div className="px-2 mt-auto">
           <FluidButton to={`/work/${slug}`}>
             Learn More
           </FluidButton>
         </div>
       </div>
-    </article>
+    </MotionArticle>
   );
 }
