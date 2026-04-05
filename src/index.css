@@ -1,0 +1,41 @@
+/* src/index.css */
+@font-face {
+    font-family: 'ITC Garamond Std';
+    src: url('/fonts/itc-garamond-std.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.purple-background-gradient {
+    background: linear-gradient(270deg, rgb(160, 0, 236) 0%, rgb(96, 70, 200) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.footer-glow-layer {
+    pointer-events: none;
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: min(20vh, 280px);
+    background: radial-gradient(
+        50% 50% at 50% 50%,
+        #D7C6FF 0%,
+        #D7C6FF 15%,
+        #E2CBFF 35%,
+        #DAE0FF 55%,
+        #CEEAFF 75%,
+        #CEEAFF 92%,
+        #D7C6FF 100%
+    );
+    filter: blur(75px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .footer-glow-layer {
+        filter: none;
+    }
+}
+  

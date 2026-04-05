@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.body-container {
+  background: linear-gradient(180deg, #F0F2F5 0%, #FFF 100%);
+  background-repeat: no-repeat;
+}
+
+@layer base {
+@font-face {
+  font-family: 'ITC Garamond Std';
+  src: url('../public/fonts/itc-garamond-std.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+}
